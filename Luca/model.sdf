@@ -1,0 +1,48 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="Luca">
+    <link name="link">
+      <inertial>
+        <pose>0 -0.1 0.95 0 0 0</pose>
+        <mass>80.0</mass>
+        <inertia> <!-- inertias are tricky to compute -->
+          <!-- http://gazebosim.org/tutorials?tut=inertia&cat=build_robot -->
+          <ixx>24.88</ixx>       <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+          <ixy>0.0</ixy>         <!-- for a box: ixy = 0 -->
+          <ixz>0.0</ixz>         <!-- for a box: ixz = 0 -->
+          <iyy>25.73</iyy>       <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+          <iyz>0.0</iyz>         <!-- for a box: iyz = 0 -->
+          <izz>2.48</izz>       <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+        </inertia>
+      </inertial>
+      
+      <collision name="bottom">
+      <pose>0 0 0.01 0 0 1.57</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.35 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+      
+      <collision name="person">
+      <pose>0 0 0.02 0 0 1.57</pose>
+        <geometry>
+          <mesh>
+           <uri>model://Luca/LucaV2.dae</uri>
+         </mesh>
+        </geometry>
+      </collision>
+      
+      <visual name="visual">
+      <pose>0 0 0.02 0 0 1.57</pose>
+        <geometry>
+         <mesh>
+           <uri>model://Luca/LucaV2.dae</uri>
+         </mesh>
+        </geometry>
+      </visual>
+      
+    </link>
+  </model>
+</sdf>
