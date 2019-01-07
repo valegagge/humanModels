@@ -1,0 +1,10 @@
+How to move a human in gazebo
+
+1) yarpserver
+2) gazebo
+3) insert CER (to run world plugin)
+4) insert Luca and/or  Anna
+5) joystickCtrl --context joystickCtrl --from cer_linux.ini --force_configuration
+6) GenericObjJoystickControl --objName Luca --create none --gain_x_axis 0.0004 --gain_y_axis 0.0004 --gain_yaw 0.001
+7) yarp connect /joystickCtrl:o /genericObjJoystickControl/joiystick:i
+8) yarp connect /genericObjJoystickControl/rpc /world_input_port

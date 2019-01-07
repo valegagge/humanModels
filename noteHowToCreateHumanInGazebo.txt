@@ -1,0 +1,38 @@
+November 2018 - Valentina Gaggero
+
+1) I installed MakeHuman 1.1.1 on Windows, because on Ubuntu 18.04 it has a bug, that has been fixed, but the patch is not available in current release.
+2) I installed blender 2.79 (windows)
+
+3) I followed the instruction in this tutorial:
+http://www.theconstructsim.com/create-spawn-humans-gazebo7/
+
+The main points to remember are the following:
+1) when create a new person, please select LOW_POLY eyes: in the model there is not many difference but it is better for face recognition
+2) the skeleton it is not necessary (tab pose->skeleton)
+If you want you can save Makehuman project. file .mhm extension
+3) export in COLLADA (.dae) and be sure to use scale units is meters (panel on the left). 
+    In the selected folder are generated .dae file and a folder called texture with .png file for body part.
+4) export Lightmap in the same location.
+   In the selected folder is created .png file 
+5) export UV map in the same location
+
+Now use blender
+1) import->collada. be sure to select import units check on left panel
+2) add light environment
+3) render
+4) if you see transparencies please activate alpha: select part-> texture icon -> materials icon -> alpha checkbox
+5) put center of mass i the feet. object-> transform -> origin to 3d cursor
+6) export collada file: be sure to select Materials in texture option on left panel and check copy.
+
+7) Modify the dae file in this way:
+   from : 
+       <ambient>
+          <color sid="ambient">0 0 0 1</color>
+        </ambient>
+    to
+
+        <ambient>
+          <color sid="ambient">1 1 1 1</color>
+        </ambient>
+        
+
