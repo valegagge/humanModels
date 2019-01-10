@@ -35,4 +35,4 @@ Now use blender
           <color sid="ambient">1 1 1 1</color>
         </ambient>
         
-
+8) update $GAZEBO_MODEL_PATH environment vaiable with the path to the folder where the sdf and dae files are.
